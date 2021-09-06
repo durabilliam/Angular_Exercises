@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 015 Nested Controllers</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myNgApp">
+  <div ng-controller="parentController">
+    Message: {{message1}}
+    <div ng-controller="childController">
+      Parent Message: {{message1}} <br />
+      Child Message: {{message2}}
+    </div>
+    Child Message: {{message2}}
+  </div>
+  <script>
+    var ngApp = angular.module('myNgApp', []);
+    ngApp.controller('parentController', function ($scope) {
+      $scope.message1 = "This is parentController";
+    });
+    ngApp.controller('childController', function ($scope) {
+      $scope.message2 = "This is childController";
+    });
+  </script>
+</body>
+</html>
