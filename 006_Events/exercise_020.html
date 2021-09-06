@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 020 AngularJS ng-click</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myNgApp">
+  <div ng-controller="myController">
+    Enter Password: <input type="password" ng-model="password" /> <br />
+
+    <button ng-click="DisplayMessage(password)">Show Password</button>
+  </div>
+
+<script>
+    var ngApp = angular.module('myNgApp', []);
+
+    ngApp.controller('myController', function ($scope, $window) {
+      $scope.DisplayMessage = function (value) {
+        $window.alert(value)
+      }
+    });
+  </script>
+</body>
+
+</html>
