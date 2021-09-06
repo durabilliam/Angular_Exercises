@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 013 ng-controller and directive</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myNgApp">
+  <div id="div1" ng-controller="myController">
+    Message: {{message}} <br />
+    <div id="div2">
+      Message: {{message}}
+    </div>
+  </div>
+  <div id="div3">
+    Message: {{message}}
+  </div>
+  <div id="div4" ng-controller="anotherController">
+    Message: {{message}}
+  </div>
+  <script>
+    var ngApp = angular.module('myNgApp', []);
+    ngApp.controller('myController', function ($scope) {
+      $scope.message = "This is myController";
+    });
+    ngApp.controller('anotherController', function($scope){
+      $scope.message = "This is anotherController";
+    })
+  </script>
+</body>
+</html>

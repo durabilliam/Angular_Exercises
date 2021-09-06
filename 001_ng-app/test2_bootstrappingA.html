@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrapping AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-init="numOfBooks = 10">
+  Number of Comic Books: <input ng-model="numOfBooks" />
+  <p> Welcome to Issue 252, we have a collection of over {{ numOfBooks + ' Million' }} comic books</p>
+
+
+</body>
+
+</html>
