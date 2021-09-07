@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 027 Order-By Filter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="myController">
+    <select ng-model="SortOrder">
+      <option value="+name">Name (asc)</option>
+      <option value="-name">Name (dec)</option>
+      <option value="+phone">Phone (asc)</option>
+      <option value="-phone">Phone (dec)</option>
+    </select>
+    <ul ng-repeat="person in persons | orderBy:SortOrder">
+      <li>{{person.name}} - {{person.phone}}</li>
+    </ul>
+  </div>
+  <script>
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller("myController", function ($scope) {
+      $scope.persons = [{ name: 'Bill', phone: '555-786-0987' },
+      { name: 'Mary', phone: '899-333-3345' },
+      { name: 'Mike', phone: '511-444-4321' },
+      { name: 'Assu', phone: '145-788-5678' },
+      { name: 'Ram', phone: '433-444-8765' },
+      { name: 'Steve', phone: '218-345-5678' }]
+      $scope.SortOrder = '+name';
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 022 Number Filter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app>
+  Enter Amount: <input type="number" ng-model="amount" /> <br />
+
+  100000 | number = {{100000 | number}} <br />
+  amount | number = {{amount | number}} <br />
+  amount | number:2 = {{amount | number:2}} <br />
+  amount | number:4 = {{amount | number:4}} <br />
+  amount | number = <span ng-bind="amount | number"></span>
+</body>
+</html>
